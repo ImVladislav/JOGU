@@ -119,12 +119,6 @@ margin-right: 5%;
     }
 }
 
-@media (min-width: 780px) {
-    .social {
-        max-width: 100px;
-
-    }
-}
 .text-section {
     width: 50%;
     text-align: center;
@@ -141,7 +135,7 @@ margin-right: 5%;
     border-radius: 30px;
 }
 .text-section:hover {
-   scale: 1.1;
+    scale: 1.1;
 }
 .footer {
     width: 100%;
@@ -162,4 +156,16 @@ margin-right: 5%;
 .footer ul li {
     display: inline;
     margin: 0;
+}
+
+
+@media (min-width: 780px) {
+    .social {
+        max-width: 100px;
+
+
+    .footer{
+    padding: 10px 0 0 0;
+    }
+}
 }
