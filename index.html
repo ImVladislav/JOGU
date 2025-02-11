@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogu</title>
+    <title>$GDINO</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="bg">
 
-    <header>
-        <h1 class="logo"><img class="title" src="jogu.png"/></h1>
-        <nav>
-            <ul>
-                <li><a href="#characters"><img class="social" src="buy.png"/></a></li>
-                <li><a href="#project"><img class="social" src="dex.png"/></a></li>
-                <li><a href="#store"><img class="social" src="x.png"/></a></li>
-                <li><a href="#store"><img class="social" src="tg.png"/></a></li>
-            </ul>
-        </nav>
-        
+        <header>
+            <h1 class="logo"><img class="title" src="jogu.png" /></h1>
+            <nav>
+                <ul>
+                    <li><a href="#characters"><img class="social" src="buy.png" /></a></li>
+                    <li><a href="#project"><img class="social" src="dex.png" /></a></li>
+                    <li><a href="#store"><img class="social" src="x.png" /></a></li>
+                    <li><a href="#store"><img class="social" src="tg.png" /></a></li>
+                </ul>
+            </nav>
+
     </div>
     </header>
     <main>
@@ -28,252 +30,252 @@
         <div class="text-section" onclick="copyText()">хххххххх</div>
 
     </main>
-            <!-- <h1 class="animate__bounceInDown wow animate__animated">
+    <!-- <h1 class="animate__bounceInDown wow animate__animated">
                                             CHAT WITH WOOL AI
                                           </h1> -->
-            <div class="chat-container">
-                <div id="chat-container" style="padding: 10px; height: 40vh; display: flex; flex-direction: column;">
-                    <div id="chat-history" style="color: #fff; flex: 1; overflow-y: auto; margin-bottom: 10px;"></div>
-                    <div class="button_block">
-                        <input type="text" id="user-input" placeholder="Enter your message..."
-                            style="flex: 1; padding: 10px; color: #fff;">
-                        <button id="send-button" class=".btn_send">Send</button>
-                    </div>
-                </div>
-                <style>
-                    /* Стилі для контейнера чату */
-                    #chat-container {
-                        padding: 10px;
-                        height: 400px;
-                        display: flex;
-                        flex-direction: column;
-                        background-color: rgba(0, 0, 0, 0.5);
-                        /* Прозорий чорний фон */
-                        border-radius: 10px;
-                        backdrop-filter: blur(10px);
-                        /* Додає ефект розмиття фону */
-                    }
-            
-                    /* Стиль для історії чату */
-                    #chat-history {
-                        color: #fff;
-                        flex: 1;
-                        overflow-y: auto;
-                        margin-bottom: 10px;
-                        display: flex;
-                        flex-direction: column;
-                    }
-            
-                    /* Стилі для текстового поля вводу */
-                    #user-input {
-                        flex: 1;
-                        padding: 10px;
-                        border: 1px solid #157e05;
-                        border-radius: 5px;
-                        background-color: rgba(255, 255, 255, 0.2);
-                        /* Легкий прозорий білий фон */
-                        color: #fff !important;
-                        font-family: "Comic Neue", cursive;
-                        width: 100%;
-                        font-weight: 800;
-                        font-style: normal;
-                    }
-            
-                    /* Стиль для кнопки відправки */
-                    #send-button {
-                        font-family: "Comic Neue", cursive;
-                        font-weight: 800;
-                        font-style: normal;
-                        padding: 10px;
-                        border: none;
-                        border-radius: 5px;
-                        background-color: #157e05;
-                        color: #fff;
-                        cursor: pointer;
-                    }
-            
-                    /* Зміни для стилю скролбару */
-                    #chat-history::-webkit-scrollbar {
-                        width: 10px;
-                        background-color: #f1f1f1;
-                        border-radius: 10px;
-                    }
-            
-                    #chat-history::-webkit-scrollbar-thumb {
-                        background-color: #157e05;
-                        border-radius: 10px;
-                        border: 2px solid #fff;
-                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-                    }
-            
-                    #chat-history::-webkit-scrollbar-track {
-                        background: rgba(255, 255, 255, 0.3);
-                        border-radius: 10px;
-                    }
-            
-                    /* Повідомлення користувача */
-                    .user-message {
-                        text-align: right;
-                        margin: 5px 0;
-                        display: inline-block;
-                        background-color: #9c2222;
-                        color: white;
-                        padding: 10px;
-                        border-radius: 15px;
-                        max-width: 70%;
-                        position: relative;
-                        align-self: flex-end;
-                        opacity: 0;
-                        animation: fadeIn 0.5s forwards;
-                    }
-            
-                    /* Повідомлення бота */
-                    .bot-message {
-                        text-align: left;
-                        margin: 5px 0;
-                        display: inline-block;
-                        background-color: #fddc11;
-                        color: black;
-                        padding: 10px;
-                        border-radius: 15px;
-                        max-width: 70%;
-                        position: relative;
-                        border: 1px solid #2a2a2a;
-                        align-self: flex-start;
-                        opacity: 0;
-                        animation: fadeIn 0.5s forwards;
-                    }
-            
-                    /* Стиль для аватарки бота */
-                    .bot-avatar {
-                        display: inline-block;
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 50%;
-                        background-image: url('100x100.png');
-                        background-size: cover;
-                        vertical-align: middle;
-                    }
-            
-                    /* Анімація для плавного появлення повідомлень */
-                    @keyframes fadeIn {
-                        from {
-                            opacity: 0;
-                        }
-            
-                        to {
-                            opacity: 1;
-                        }
-                    }
-            
-                    /* Стилі для кнопки на ховері */
-                    #send-button:hover {
-                        background-color: #157e05;
-                    }
-            
-                    /* Прозорість для фону кнопки */
-                    #send-button {
-                        background-color: rgba(21, 126, 5, 0.8);
-                    }
-                </style>
-                <script>
-                    const chatHistory = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+    <div class="chat-container">
+        <div id="chat-container" style="padding: 10px; height: 40vh; display: flex; flex-direction: column;">
+            <div id="chat-history" style="color: #fff; flex: 1; overflow-y: auto; margin-bottom: 10px;"></div>
+            <div class="button_block">
+                <input type="text" id="user-input" placeholder="Enter your message..."
+                    style="flex: 1; padding: 10px; color: #fff;">
+                <button id="send-button" style="margin-left: 8px;" class=".btn_send">Send</button>
+            </div>
+        </div>
+        <style>
+            /* Стилі для контейнера чату */
+            #chat-container {
+                padding: 10px;
+                height: 400px;
+                display: flex;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Прозорий чорний фон */
+                border-radius: 10px;
+                backdrop-filter: blur(10px);
+                /* Додає ефект розмиття фону */
+            }
 
-                    function updateChatHistory() {
-                        const chatHistoryDiv = document.getElementById('chat-history');
-                        chatHistoryDiv.innerHTML = chatHistory.map(msg => msg).join('');
-                        chatHistoryDiv.scrollTop = chatHistoryDiv.scrollHeight;
+            /* Стиль для історії чату */
+            #chat-history {
+                color: #fff;
+                flex: 1;
+                overflow-y: auto;
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Стилі для текстового поля вводу */
+            #user-input {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #157e05;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.2);
+                /* Легкий прозорий білий фон */
+                color: #fff !important;
+                font-family: "Comic Neue", cursive;
+                width: 100%;
+                font-weight: 800;
+                font-style: normal;
+            }
+
+            /* Стиль для кнопки відправки */
+            #send-button {
+                font-family: "Comic Neue", cursive;
+                font-weight: 800;
+                font-style: normal;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #157e05;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            /* Зміни для стилю скролбару */
+            #chat-history::-webkit-scrollbar {
+                width: 10px;
+                background-color: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            #chat-history::-webkit-scrollbar-thumb {
+                background-color: #157e05;
+                border-radius: 10px;
+                border: 2px solid #fff;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            }
+
+            #chat-history::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 10px;
+            }
+
+            /* Повідомлення користувача */
+            .user-message {
+                text-align: right;
+                margin: 5px 0;
+                display: inline-block;
+                background-color: #9c2222;
+                color: white;
+                padding: 10px;
+                border-radius: 15px;
+                max-width: 70%;
+                position: relative;
+                align-self: flex-end;
+                opacity: 0;
+                animation: fadeIn 0.5s forwards;
+            }
+
+            /* Повідомлення бота */
+            .bot-message {
+                text-align: left;
+                margin: 5px 0;
+                display: inline-block;
+                background-color: #fddc11;
+                color: black;
+                padding: 10px;
+                border-radius: 15px;
+                max-width: 70%;
+                position: relative;
+                border: 1px solid #2a2a2a;
+                align-self: flex-start;
+                opacity: 0;
+                animation: fadeIn 0.5s forwards;
+            }
+
+            /* Стиль для аватарки бота */
+            .bot-avatar {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-image: url('100x100.png');
+                background-size: cover;
+                vertical-align: middle;
+            }
+
+            /* Анімація для плавного появлення повідомлень */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            /* Стилі для кнопки на ховері */
+            #send-button:hover {
+                background-color: #157e05;
+            }
+
+            /* Прозорість для фону кнопки */
+            #send-button {
+                background-color: rgba(21, 126, 5, 0.8);
+            }
+        </style>
+        <script>
+            const chatHistory = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+
+            function updateChatHistory() {
+                const chatHistoryDiv = document.getElementById('chat-history');
+                chatHistoryDiv.innerHTML = chatHistory.map(msg => msg).join('');
+                chatHistoryDiv.scrollTop = chatHistoryDiv.scrollHeight;
+            }
+
+            function addMessageToChat(message, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = isUser ? 'user-message' : 'bot-message';
+                if (!isUser) {
+                    messageDiv.innerHTML = `<div class="bot-avatar"></div> <span>${message}</span>`;
+                } else {
+                    messageDiv.innerHTML = `<span>${message}</span>`;
+                }
+
+                chatHistory.push(messageDiv.outerHTML);
+                updateChatHistory();
+
+                messageDiv.style.opacity = 0;
+                setTimeout(() => {
+                    messageDiv.style.opacity = 1;
+                }, 0);
+            }
+
+            document.getElementById('send-button').addEventListener('click', sendMessage);
+            document.getElementById('user-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            async function sendMessage() {
+                const sendButton = document.getElementById('send-button');
+
+                if (sendButton.disabled) return
+
+                const userInput = document.getElementById('user-input').value;
+                if (!userInput) return;
+
+                addMessageToChat(`you: ${userInput}`, true);
+                sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+                document.getElementById('user-input').value = '';
+
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'bot-message';
+                typingIndicator.innerHTML = `<div class="bot-avatar"></div> <span> Moldy is typing...</span>`;
+                chatHistory.push(typingIndicator.outerHTML);
+                updateChatHistory();
+
+                // Блокируем кнопку отправки
+                sendButton.disabled = true;
+                const backendUrl = 'https://moldy-back.onrender.com/chat';
+                // const backendUrl = 'http://localhost:4000/chat';
+                const fetchPromise = fetch(backendUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ messages: chatHistory.slice(-10) })
+                });
+
+                // Таймер на 5 секунд
+                const timeoutPromise = new Promise((_, reject) =>
+                    setTimeout(() => reject(new Error('Server error')), 5000)
+                );
+
+                try {
+                    const response = await Promise.race([fetchPromise, timeoutPromise]);
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status} ${response.statusText}`);
                     }
-
-                    function addMessageToChat(message, isUser) {
-                        const messageDiv = document.createElement('div');
-                        messageDiv.className = isUser ? 'user-message' : 'bot-message';
-                        if (!isUser) {
-                            messageDiv.innerHTML = `<div class="bot-avatar"></div> <span>${message}</span>`;
-                        } else {
-                            messageDiv.innerHTML = `<span>${message}</span>`;
-                        }
-
-                        chatHistory.push(messageDiv.outerHTML);
-                        updateChatHistory();
-
-                        messageDiv.style.opacity = 0;
-                        setTimeout(() => {
-                            messageDiv.style.opacity = 1;
-                        }, 0);
-                    }
-
-                    document.getElementById('send-button').addEventListener('click', sendMessage);
-                    document.getElementById('user-input').addEventListener('keypress', function (e) {
-                        if (e.key === 'Enter') {
-                            sendMessage();
-                        }
-                    });
-
-                    async function sendMessage() {
-                        const sendButton = document.getElementById('send-button');
-
-                        if (sendButton.disabled) return
-
-                        const userInput = document.getElementById('user-input').value;
-                        if (!userInput) return;
-
-                        addMessageToChat(`you: ${userInput}`, true);
-                        sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
-                        document.getElementById('user-input').value = '';
-
-                        const typingIndicator = document.createElement('div');
-                        typingIndicator.className = 'bot-message';
-                        typingIndicator.innerHTML = `<div class="bot-avatar"></div> <span> Moldy is typing...</span>`;
-                        chatHistory.push(typingIndicator.outerHTML);
-                        updateChatHistory();
-
-                        // Блокируем кнопку отправки
-                        sendButton.disabled = true;
-                        const backendUrl = 'https://moldy-back.onrender.com/chat';
-                        // const backendUrl = 'http://localhost:4000/chat';
-                        const fetchPromise = fetch(backendUrl, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ messages: chatHistory.slice(-10) })
-                        });
-
-                        // Таймер на 5 секунд
-                        const timeoutPromise = new Promise((_, reject) =>
-                            setTimeout(() => reject(new Error('Server error')), 5000)
-                        );
-
-                        try {
-                            const response = await Promise.race([fetchPromise, timeoutPromise]);
-                            if (!response.ok) {
-                                throw new Error(`Error: ${response.status} ${response.statusText}`);
-                            }
-                            const data = await response.json();
-                            chatHistory.pop();
-                            addMessageToChat(`${data.reply}`, false);
-                        } catch (error) {
-                            chatHistory.pop();
-                            addMessageToChat(`Error: ${error.message || 'request error'}`, false);
-                        } finally {
-                            updateChatHistory();
-                            sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
-                            // Разблокируем кнопку отправки
-                            sendButton.disabled = false;
-
-                        }
-                    }
+                    const data = await response.json();
+                    chatHistory.pop();
+                    addMessageToChat(`${data.reply}`, false);
+                } catch (error) {
+                    chatHistory.pop();
+                    addMessageToChat(`Error: ${error.message || 'request error'}`, false);
+                } finally {
                     updateChatHistory();
-                </script>
-            </div>
-            </div>
+                    sessionStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+                    // Разблокируем кнопку отправки
+                    sendButton.disabled = false;
+
+                }
+            }
+            updateChatHistory();
+        </script>
+    </div>
+    </div>
     <footer class="footer">
         <ul>
-            <li><a href="#characters"><img class="social" src="buy.png"/></a></li>
-            <li><a href="#project"><img class="social" src="dex.png"/></a></li>
-            <li><a href="#store"><img class="social" src="x.png"/></a></li>
-            <li><a href="#store"><img class="social" src="tg.png"/></a></li>
+            <li><a href="#characters"><img class="social" src="buy.png" /></a></li>
+            <li><a href="#project"><img class="social" src="dex.png" /></a></li>
+            <li><a href="#store"><img class="social" src="x.png" /></a></li>
+            <li><a href="#store"><img class="social" src="tg.png" /></a></li>
         </ul>
     </footer>
     <script>
@@ -285,4 +287,5 @@
         }
     </script>
 </body>
+
 </html>
