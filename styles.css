@@ -1,7 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-   font-family: Arial, sans-serif;
+    font-family: "Jersey 10", serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 18px;
   overflow-x: hidden;
 }
 
@@ -133,6 +136,9 @@ margin-right: 5%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 30px;
+
+    font-family: "Jersey 10", serif;
+    font-weight: 200;
 }
 .text-section:hover {
     scale: 1.1;
