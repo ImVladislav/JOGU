@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$GDINO</title>
+    <title>$DINOG</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,30 +13,30 @@
 
 <body>
     <div class="bg">
-<!-- 
+
         <header>
-            <h1 class="logo"><img class="title" src="jogu.png" /></h1>
-            <nav>
-                <ul>
-                    <li><a href="#characters"><img class="social" src="buy.png" /></a></li>
-                    <li><a href="#project"><img class="social" src="dex.png" /></a></li>
-                    <li><a href="#store"><img class="social" src="x.png" /></a></li>
-                    <li><a href="#store"><img class="social" src="tg.png" /></a></li>
-                </ul>
+            <!-- <h1 class="logo"><img class="title" src="jogu.png" /></h1> -->
+            <a href="#characters"><img class="social" src="buy.png" /></a>
+            <a href="#project"><img class="social" src="dex.png" /></a>
+            <a href="#store"><img class="social" src="x.png" /></a>
+            <a href="#store"><img class="social" src="tg.png" /></a>
+
+            <!-- <nav style="display: flex;">
+
             </nav> -->
 
+        </header>
     </div>
-    </header>
 
 
 
-    <!-- <main>
+    <main>
         <div class="main-background"></div>
         <iframe src="dist/index.html" width="100%" height="240px"></iframe>
         
         <div class="text-section" onclick="copyText()">xxxxxxxxx</div>
 
-    </main> -->
+    </main>
 
 
 
@@ -46,8 +46,9 @@
 
 
 
-                                          
-    <!-- <div class="chat-container">
+
+
+    <div class="chat-container">
         <div id="chat-container" style="padding: 10px; height: 40vh; display: flex; flex-direction: column;">
             <div id="chat-history" style="color: #fff; flex: 1; overflow-y: auto; margin-bottom: 10px;"></div>
             <div class="button_block">
@@ -55,12 +56,12 @@
                     style="flex: 1; padding: 10px; color: #fff;">
                 <button id="send-button" style="margin-left: 8px;" class=".btn_send">Send</button>
             </div>
-        </div> -->
+        </div>
 
 
 
 
-
+        
         <style>
             /* Стилі для контейнера чату */
             #chat-container {
@@ -245,7 +246,7 @@
 
                 const typingIndicator = document.createElement('div');
                 typingIndicator.className = 'bot-message';
-                typingIndicator.innerHTML = `<div class="bot-avatar"></div> <span> GDINO is typing...</span>`;
+                typingIndicator.innerHTML = `<div class="bot-avatar"></div> <span> DINOG is typing...</span>`;
                 chatHistory.push(typingIndicator.outerHTML);
                 updateChatHistory();
 
@@ -292,14 +293,14 @@
 
 
 
-    <!-- <footer class="footer">
+    <footer class="footer">
         <ul>
             <li><a href="#characters"><img class="social" src="buy.png" /></a></li>
             <li><a href="#project"><img class="social" src="dex.png" /></a></li>
             <li><a href="#store"><img class="social" src="x.png" /></a></li>
             <li><a href="#store"><img class="social" src="tg.png" /></a></li>
         </ul>
-    </footer> -->
+    </footer>
 
 
 

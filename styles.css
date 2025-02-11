@@ -34,8 +34,9 @@ main{
 }
 
 header {
+    margin-top: 12px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     /* padding: 20px; */
     /* background: rgba(255, 255, 255, 0.8); */
