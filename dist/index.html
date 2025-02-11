@@ -2335,8 +2335,51 @@
 	  hideClass(".onlyforchrome");
 	}
   </script>
-    </div>
-   
+<div id="jumpContainer" style="display: flex; justify-content: space-around;"></div>
+
+<script>
+    function renderJumpControl() {
+        const container = document.getElementById("jumpContainer");
+        container.innerHTML = ""; // Очищуємо контейнер перед рендерингом
+
+        if (window.innerWidth < 768) {
+            const button = document.createElement("button");
+            button.id = "jumpButton";
+            button.textContent = "Jump!";
+            button.addEventListener("click", handleJump);
+            container.appendChild(button);
+        } else {
+            const text = document.createElement("p");
+            text.className = "textInst";
+            text.style.margin = "0";
+            text.textContent = "Press space to jump";
+            container.appendChild(text);
+        }
+    }
+
+    function handleJump() {
+        if (Runner.instance_) {
+            if (!Runner.instance_.activated) {
+                Runner.instance_.playIntro(); // Запускає гру на мобільному
+            }
+            Runner.instance_.tRex.startJump();
+        }
+    }
+
+    // Запускаємо гру при першому дотику на мобільних пристроях
+    document.addEventListener("touchstart", function() {
+        if (Runner.instance_ && !Runner.instance_.activated) {
+            Runner.instance_.playIntro();
+        }
+    }, { once: true }); // Виконається лише один раз
+
+    // Викликаємо при завантаженні сторінки
+    renderJumpControl();
+
+    // Викликаємо при зміні розміру екрану
+    window.addEventListener("resize", renderJumpControl);
+</script>
+
 </body>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
