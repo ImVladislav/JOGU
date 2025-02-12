@@ -140,6 +140,7 @@ margin-right: 5%;
 
     font-family: "Jersey 10", serif;
     font-weight: 200;
+    max-width: 1400px;
 }
 .text-section:hover {
     scale: 1.1;
