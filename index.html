@@ -31,29 +31,31 @@
 
 
     <main>
-        <div class="main-background"></div>
+        <!-- <iframe style="border: none;" src="dist/index.html" width="100%" height="300px"></iframe> -->
+        <div class="main-background">
 
-        <iframe src="dist/index.html" width="100%" height="400px"></iframe>
 
-        <div class="text-section" onclick="copyText()">xxxxxxxxx</div>
-        <p class="text-section">
+            <div class="text-section" onclick="copyText()">xxxxxxxxx</div>
+            <p style="width: 90%;" class="text-section">
 
-            Once upon a time, $DINOG was just a little pixelated dino, running endlessly through the vast deserts of the
-            blockchain.
-            His path was never easy - every step forward brought new obstacles. Jitters trying to shake him off, dips
-            opening deep
-            pits beneath him, and paper hands throwing up roadblocks. But $DINOG never stopped. He leaped over every
-            challenge,
-            dodged every setback, and kept pushing forward.
+                Once upon a time, $DINOG was just a little pixelated dino, running endlessly through the vast deserts of
+                the
+                blockchain.
+                His path was never easy - every step forward brought new obstacles. Jitters trying to shake him off,
+                dips
+                opening deep
+                pits beneath him, and paper hands throwing up roadblocks. But $DINOG never stopped. He leaped over every
+                challenge,
+                dodged every setback, and kept pushing forward.
 
-            And then, it happened. With unshakable determination, $DINOG set the world record, outrunning FUD,
-            outlasting the weak,
-            and proving that true Giga Dinos never fall - they only rise. The finish line? Nowhere in sight. Because
-            $DINOG runs
-            forever.
+                And then, it happened. With unshakable determination, $DINOG set the world record, outrunning FUD,
+                outlasting the weak,
+                and proving that true Giga Dinos never fall - they only rise. The finish line? Nowhere in sight. Because
+                $DINOG runs
+                forever.
 
-        </p>
-
+            </p>
+        </div>
     </main>
 
 
@@ -69,7 +71,19 @@
     <div class="chat-container">
 
 
+        <div style="  height: 50px;      
+            background-image: linear-gradient(to top, #ffffff, #97c0e0); /* Градієнт від блакитного до білого */
+">
+            <h3 style="
+                    font-size: 36px; /* Задаємо розмір шрифта */
+            font-weight: bold; /* Товстий шрифт */
+            -webkit-background-clip: text; /* Дозволяє застосувати градієнт до тексту */
+            color: black; /* Зробити сам текст прозорим, щоб градієнт був видимий */
+            text-align: center; /* Вирівнювання тексту по центру */
+            margin: 0;
+        ">chat with $DINOG</h3>
 
+        </div>
         <div id="chat-container" style="padding: 10px; height: 40vh; display: flex; flex-direction: column;">
             <div id="chat-history" style="color: #fff; flex: 1; overflow-y: auto; margin-bottom: 10px;"></div>
             <div class="button_block">
@@ -90,12 +104,12 @@
                 height: 200px;
                 display: flex;
                 flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.5);
+                /* background-color: rgba(0, 0, 0, 0.5); */
                 /* Прозорий чорний фон */
                 border-radius: 10px;
                 backdrop-filter: blur(10px);
                 /* Додає ефект розмиття фону */
-                background-image: url('./site2.png');
+                /* background-image: url('./site2.png'); */
                 /* Шлях до вашої картинки */
                 background-size: cover;
                 /* Картинка покриває весь екран */
@@ -324,10 +338,11 @@
 
 
 
-    <footer class="footer">
+    <footer style="background-image: linear-gradient(to top, #97c0e0, #ffffff);" class="footer">
         <ul>
             <li><a href="#characters"><img class="social" src="buy.png" /></a></li>
-            <li><a href="#project"><img class="social" src="dex.png" /></a></li>
+            <li><a href="https://www.dextools.io/app/en/solana/pair-explorer/xxxxxxxxx"><img class="social"
+                        src="dex.png" /></a></li>
             <li><a href="#store"><img class="social" src="x.png" /></a></li>
             <li><a href="#store"><img class="social" src="tg.png" /></a></li>
         </ul>

@@ -3,17 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title>T-Rex Game</title>
-  
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
 </head>
-<body style="
-            background-image: url('../site1.png');
-            background-size: cover; 
-            background-position: inherit; 
-            background-repeat: no-repeat;
-
-            
-            ">
-
+<body style="margin: 0;" >
+        <div style="  height: 50px;      
+                    background-image: linear-gradient(to top, #ffffff, #cedf7e)
+        ">
+            <h3 style="
+                            font-size: 36px; /* Задаємо розмір шрифта */
+                    font-weight: bold; /* Товстий шрифт */
+                    -webkit-background-clip: text; /* Дозволяє застосувати градієнт до тексту */
+                    color: black; /* Зробити сам текст прозорим, щоб градієнт був видимий */
+                    text-align: center; /* Вирівнювання тексту по центру */
+                    margin: 0;
+                ">chat with $DINOG</h3>
+        
+        </div>
     
     <head>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -1904,7 +1910,7 @@
         
         @media (max-height: 600px) {
             .interstitial-wrapper {
-                margin-top: 90px;
+                /* margin-top: 90px; */
             }
         }
         
@@ -2116,6 +2122,7 @@
         @media (max-width: 640px), (max-height: 640px) {
             body {
                 margin: 15px;
+                margin-top: 190px;
             }
             h1 {
                 margin: 10px 0 15px;
