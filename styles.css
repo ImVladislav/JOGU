@@ -200,3 +200,31 @@ padding: 20px;
     margin-right: auto;
     font-size:2em;
 }
+
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to right, #cedf7e, #ffffff);
+    padding: 10px 0;
+    position: relative;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Jersey 10", serif;
+    color: black;
+    animation: marquee 120s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
