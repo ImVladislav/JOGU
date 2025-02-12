@@ -67,6 +67,9 @@
 
 
     <div class="chat-container">
+
+
+
         <div id="chat-container" style="padding: 10px; height: 40vh; display: flex; flex-direction: column;">
             <div id="chat-history" style="color: #fff; flex: 1; overflow-y: auto; margin-bottom: 10px;"></div>
             <div class="button_block">
@@ -84,7 +87,7 @@
             /* Стилі для контейнера чату */
             #chat-container {
                 padding: 10px;
-                height: 400px;
+                height: 200px;
                 display: flex;
                 flex-direction: column;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -96,9 +99,11 @@
                 /* Шлях до вашої картинки */
                 background-size: cover;
                 /* Картинка покриває весь екран */
-                background-position: center;
+                background-position: contain;
                 /* Центрування картинки */
                 background-repeat: no-repeat;
+                position: relative;
+                z-index: 2;
             }
 
             /* Стиль для історії чату */
