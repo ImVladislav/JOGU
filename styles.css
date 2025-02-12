@@ -28,7 +28,7 @@ main{
 .bg{
     width: 100vw;
     height: 100vh;
-    background: url('1.gif') no-repeat center center;
+    background: url('GD.webp') no-repeat center center;
     background-size: cover;
     /* position: absolute; */
 }
