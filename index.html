@@ -19,8 +19,8 @@
 
         <a href="#characters"><img class="social" src="buy.png" /></a>
         <a href="#project"><img class="social" src="dex.png" /></a>
-        <a href="#store"><img class="social" src="x.png" /></a>
-        <a href="#store"><img class="social" src="tg.png" /></a>
+        <a href="https://x.com/GDINOSOL"><img class="social" src="x.png" /></a>
+        <a href="https://t.me/GDINOSOL"><img class="social" src="tg.png" /></a>
         <!-- </nav> -->
 
     </header>
@@ -108,6 +108,20 @@
 
     </div>
     <iframe style="border: none;" src="dist/index.html" width="100%" height="300px"></iframe>
+
+
+    <h3 style="
+        
+             font-size: 54px; /* Задаємо розмір шрифта */
+            font-weight: bold; /* Товстий шрифт */
+            -webkit-background-clip: text; /* Дозволяє застосувати градієнт до тексту */
+            color: black; /* Зробити сам текст прозорим, щоб градієнт був видимий */
+            text-align: center; /* Вирівнювання тексту по центру */
+            margin: 0;
+            font-family: 'Jersey 10', serif;
+            width: 100% !important;">CONTRACT ADDRESS, CLICK TO COPY
+    </h3>
+
     <div style="  height: 120px;  
         display: flex;
     align-items: end;    
@@ -115,7 +129,53 @@
         ">
         <div class="text-section" onclick="copyText()">xxxxxxxxx</div>
 
+        <!-- Контейнер для копіювання -->
+        <div
+            style="height: 120px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(to top, #d1e083, #ffffff);">
+            <!-- <div class="copy-container"> -->
+            <!-- <div class="text-section" onclick="copyText()">xxxxxxxxx</div> -->
+            <!-- </div> -->
+        </div>
 
+        <!-- Модальне вікно -->
+        <div id="copyModal" class="copy-modal">
+            <p>✅ Contract copied!</p>
+        </div>
+
+        <style>
+            /* Контейнер копіювання */
+            .copy-container {
+                padding: 10px 15px;
+                background: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                font-size: 18px;
+                font-family: 'Jersey 10', serif;
+                font-weight: bold;
+                color: #2a2a2a;
+            }
+
+            /* Стиль модального вікна */
+            .copy-modal {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #cddf7d;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 10px;
+                font-size: 20px;
+                font-family: 'Jersey 10', serif;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease-in-out, visibility 0.3s;
+                z-index: 1000;
+            }
+        </style>
     </div>
 
     <main>
@@ -151,7 +211,7 @@
         ">Chat with $GDINO</h3>
 
         </div>
-        <div id="chat-container" style="padding: 10px; height: 40vh; display: flex; flex-direction: column;">
+        <div id="chat-container" style="padding: 10px; height: 55vh; display: flex; flex-direction: column;">
             <div id="chat-history" style="color: #fff; flex: 1; overflow-y: auto; margin-bottom: 10px;"></div>
             <div style="width: 100%; max-width: 600px;" class="button_block">
                 <input type="text" id="user-input" placeholder="Enter your message..."
@@ -285,7 +345,7 @@
                 display: inline-block;
                 width: 30px;
                 height: 30px;
-                border-radius: 50%;
+                /* border-radius: 50%; */
                 background-image: url('100x100.png');
                 background-size: cover;
                 vertical-align: middle;
@@ -412,8 +472,8 @@
             <li><a href="#characters"><img class="social" src="buy.png" /></a></li>
             <li><a href="https://www.dextools.io/app/en/solana/pair-explorer/xxxxxxxxx"><img class="social"
                         src="dex.png" /></a></li>
-            <li><a href="#store"><img class="social" src="x.png" /></a></li>
-            <li><a href="#store"><img class="social" src="tg.png" /></a></li>
+            <li><a href="https://x.com/GDINOSOL"><img class="social" src="x.png" /></a></li>
+            <li><a href="https://t.me/GDINOSOL"><img class="social" src="tg.png" /></a></li>
         </ul>
     </footer>
 
@@ -424,7 +484,16 @@
         function copyText() {
             const text = document.querySelector(".text-section").innerText;
             navigator.clipboard.writeText(text).then(() => {
-                alert("Contract copied: " + text);
+                const modal = document.getElementById("copyModal");
+                modal.style.opacity = "1";
+                modal.style.visibility = "visible";
+
+                setTimeout(() => {
+                    modal.style.opacity = "0";
+                    modal.style.visibility = "hidden";
+                }, 2000); // Приховуємо через 2 секунди
+            }).catch(err => {
+                console.error("Failed to copy text: ", err);
             });
         }
     </script>
